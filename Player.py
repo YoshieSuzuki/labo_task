@@ -1,4 +1,5 @@
 import random
+import numpy
 
 class Player: #継承元となるプレイヤークラス。
     def __init__(self,name,number):
@@ -41,11 +42,16 @@ class Suzuki(Player):
         super().__init__(name, number)
 
     def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
-        tmp=["stay", "theater", "restaurant"]
+        tmp = ["stay", "theater", "restaurant"]
+        prob = [0.9, 0, 0.1]
         if day == 0:
             self.action = tmp[0]
         else:
-            self.action = tmp[actions.index(max(actions))]
+            mindex = actions.index(max(actions))
+            if mindex == 0:
+                self.action = numpy.random.choice(a = tmp, p = prob)
+            else:
+                self.action = tmp[mindex]
 
 #テンプレート
 #
