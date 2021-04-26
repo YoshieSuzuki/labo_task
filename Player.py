@@ -36,7 +36,7 @@ class Tanaka(Player): #例2
         elif actions[1]<3: self.action="theater"
         else: self.action="stay"
 
-class Suzuki(Player):#しっぺ返し
+class Suzuki(Player):
     def __init__(self, name: str, number: int):
         super().__init__(name, number)
 
