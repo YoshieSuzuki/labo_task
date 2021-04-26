@@ -14,8 +14,8 @@ def reward(stay,theater,restaurant): #行動別人数の組み合わせによっ
 
 trans={"stay":0,"theater":1,"restaurant":2}
 # TODO revert changes 17~19
-Players=[Player.Fujitani("yukitani",i) for i in range(7)] #今は全員藤谷でやってます
-Players.append(Player.Tanaka("Tanaka",7))
+Players=[Player.Tanaka("Tanaka",i) for i in range(7)] #今は全員藤谷でやってます
+Players.append(Player.Fujitani("fujiyuki",7))
 Players.append(Player.AllD("AllD",8))
 Players.append(Player.Suzuki("Suzuki",9))
 #本番は,Players=[Player.Oguni("Oguni",0), Player.Suzuki("Suzuki",1), ... , Player.Matsumoto("Matsumoto",9)]こんな感じになります。

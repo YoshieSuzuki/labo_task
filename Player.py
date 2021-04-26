@@ -36,13 +36,21 @@ class Tanaka(Player): #例2
         elif actions[1]<3: self.action="theater"
         else: self.action="stay"
 
-class AllD(Player): #常に裏切っていく
+class AllD(Player): #常に裏切っていく 案外悪くなさそうなのが…
     def __init__(self, name: str, number: int):
         super().__init__(name, number)
 
     def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
         tmp=["stay", "theater", "restaurant"]
         self.action = tmp[2]
+
+class AllC(Player): #常に協力する 損することはない
+    def __init__(self, name: str, number: int):
+        super().__init__(name, number)
+
+    def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
+        tmp=["stay", "theater", "restaurant"]
+        self.action = tmp[0]
 
 class Suzuki(Player): #mine
     def __init__(self, name: str, number: int):
@@ -50,7 +58,11 @@ class Suzuki(Player): #mine
 
     def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
         tmp=["stay", "theater", "restaurant"]
-        self.action = tmp[2]
+
+        # if day <= 30:
+        #     self.action = tmp[day % 3]
+        # else:
+
 
 #テンプレート
 #
