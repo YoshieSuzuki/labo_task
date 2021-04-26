@@ -13,7 +13,7 @@ def reward(stay,theater,restaurant): #行動別人数の組み合わせによっ
     return reward_vec
 
 trans={"stay":0,"theater":1,"restaurant":2}
-# TODO revert changes
+# TODO revert changes 17~19
 Players=[Player.Fujitani("yukitani",i) for i in range(8)] #今は全員藤谷でやってます
 Players.append(Player.Tanaka("Tanaka",8))
 Players.append(Player.Suzuki("Suzuki",9))
@@ -36,6 +36,7 @@ for day in range(100): #3年のシミュレーション
         hist[idx].append(hist[idx][-1]+reward_set[trans[player.action]])
         player.point=hist[idx][-1]
         points[idx]=hist[idx][-1]
+# TODO revert changes 39~
     print(day)
     print(actions)
     print(points)
