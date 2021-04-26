@@ -22,7 +22,7 @@ hist=[[0] for _ in range(10)] #10人の点数推移メモ
 actions=[0,0,0] #stay,theater,restaurant
 points=[0 for _ in range(10)]
 
-for day in range(100): #3年のシミュレーション
+for day in range(365*3): #3年のシミュレーション
     # 行動決め
     for player in Players: player.decide_action(points,actions,day) #ここで行動を決めます。
 

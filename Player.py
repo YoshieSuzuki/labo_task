@@ -42,10 +42,7 @@ class Suzuki(Player): #mine
 
     def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
         tmp=["stay", "theater", "restaurant"]
-        if day <= 30:
-            self.action = tmp[day % 3]
-        else:
-            self.action = tmp[2]
+        self.action = tmp[2]
 
 #テンプレート
 #
