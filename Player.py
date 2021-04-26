@@ -36,11 +36,11 @@ class Tanaka(Player): #例2
         elif actions[1]<3: self.action="theater"
         else: self.action="stay"
 
-class Suzuki(Player): #例1
-    def __init__(self, name: str, number: int): #初期化。ここに追記する形でいじってもよい。
+class Suzuki(Player): #mine
+    def __init__(self, name: str, number: int):
         super().__init__(name, number)
 
-    def decide_action(self,points,actions,day): #ランダムに行動する人の例
+    def decide_action(self,points,actions,day):
         tmp=["stay","theater","restaurant"]
         self.action=random.choice(tmp)
 
