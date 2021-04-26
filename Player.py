@@ -40,9 +40,12 @@ class Suzuki(Player): #mine
     def __init__(self, name: str, number: int):
         super().__init__(name, number)
 
-    def decide_action(self,points,actions,day):
-        tmp=["stay","theater","restaurant"]
-        self.action=random.choice(tmp)
+    def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
+        tmp=["stay", "theater", "restaurant"]
+        if day <= 30:
+            self.action = tmp[day % 3]
+        else:
+            self.action = tmp[2]
 
 #テンプレート
 #
