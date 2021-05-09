@@ -43,15 +43,15 @@ class Suzuki(Player):
 
     def decide_action(self, points: list[int], actions: list[int], day: int) -> None:
         tmp = ["stay", "theater", "restaurant"]
-        prob = [0.9, 0, 0.1]
+        prob0 = [0.85, 0, 0.15]
         if day == 0:
-            self.action = tmp[0]
+            self.action = tmp[1]
         else:
-            mindex = actions.index(max(actions))
-            if mindex == 0:
-                self.action = numpy.random.choice(a = tmp, p = prob)
+            maxdex = actions.index(max(actions))
+            if maxdex == 0:
+                self.action = numpy.random.choice(a = tmp, p = prob0)
             else:
-                self.action = tmp[mindex]
+                self.action = tmp[maxdex]
 
 #テンプレート
 #
